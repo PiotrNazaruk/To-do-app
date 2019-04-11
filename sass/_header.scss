@@ -1,0 +1,49 @@
+.header{
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.header__container{
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+
+
+}
+.header__h1{
+    width: 100%;
+    text-align: center;
+   
+}
+.header__form{
+    width: 100%;
+    height: 20%;
+    margin-top: 10%;
+    form{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+
+        input{
+            width: 70%;
+            height: 100%;
+            border: .1rem solid black;
+
+        }
+        button{
+            width: 25%;
+            height: 100%;
+            background: white;
+            border: .1rem solid black;
+        }
+    }
+}
