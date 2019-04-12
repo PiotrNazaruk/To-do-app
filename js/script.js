@@ -1,12 +1,15 @@
-const taskCounter = document.querySelector('.header__span');
+const taskNumber = document.querySelector('.header__span');
 const form = document.querySelector('.form');
 const formInput = document.querySelector('.form__input');
 const ul = document.querySelector('.header__ul');
 const li = document.querySelectorAll('.main');
 //// adding listener on form submit //////
 let liArray =[];
-
+let taskCounter = 0;
+console.log(taskCounter);
 const removeTask = (e)=>{
+    taskCounter--;
+    taskNumber.textContent = taskCounter;
      let arrayIndex = e.target.parentNode.dataset.active;
     e.target.parentNode.remove();
      liArray.splice(arrayIndex,1);
@@ -24,12 +27,14 @@ const removeTask = (e)=>{
 
 const addTask = (e)=>{
     e.preventDefault();
-    
+    taskCounter++;
+    console.log(taskCounter);
+    taskNumber.textContent = taskCounter;
     let inputText = formInput.value;
     
     if(!inputText)return;
     const li = document.createElement('li');
-    li.innerHTML = `${inputText} <button class ="delete">usun</button>`;
+    li.innerHTML = `${inputText} <button class ="delete">remove</button>`;
     liArray.push(li);
     ul.appendChild(li);
     ul.textContent = '';
