@@ -27,12 +27,16 @@ const removeTask = (e)=>{
 
 const addTask = (e)=>{
     e.preventDefault();
-    taskCounter++;
+    
     console.log(taskCounter);
     taskNumber.textContent = taskCounter;
     let inputText = formInput.value;
     
     if(!inputText)return;
+    else if(inputText){
+        ++taskCounter;
+        taskNumber.textContent = taskCounter;
+    }
     const li = document.createElement('li');
     li.innerHTML = `${inputText} <button class ="delete">remove</button>`;
     liArray.push(li);

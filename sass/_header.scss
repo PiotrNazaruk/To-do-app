@@ -1,14 +1,15 @@
 .header{
-    position: fixed;
-    height: 100vh;
+   
+    height: 500vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
+   border: .1rem solid black;
 }
 .header__container{
-    height: 90%;
-    width: 50%;
+    height: 95%;
+    width: 90%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -20,12 +21,42 @@
 .header__h1{
     width: 100%;
     text-align: center;
+    position: relative;
+   h1{
+       @include desktop{
+           font-size: 3rem;
+       }
+   }
+    &::before{
+        content: '';
+        position: absolute;
+        height: .3rem;
+        background: black;
+        width: 15%;
+        top: 50%;
+        left: -2%;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        height: .3rem;
+        background: black;
+        width: 15%;
+        top: 50%;
+        right:  2%;
+    }
    
 }
 .header__form{
     width: 100%;
-    height: 10%;
+    height:3%;
     margin-top: 10%;
+    @include tablet{
+        height: 3%;
+    }
+    @include desktop{
+        height: 3%;
+    }
     form{
         width: 100%;
         height: 100%;
@@ -36,25 +67,62 @@
         input{
             width: 70%;
             height: 100%;
-            border: .1rem solid black;
+            background: #F1F2F0;
+            border: none;
+            padding-left: 5%;
+
 
         }
         button{
-            width: 25%;
+            width: 30%;
             height: 100%;
             background: white;
             border: .1rem solid black;
+            font-size: 1.5rem;
+            background: #204359;
+            color: white;
+            &:hover{
+                background: black;
+                color: white;
+            }
         }
     }
 }
 .main{
 font-size: 1.5rem;
 margin-top: 5%;
+display: flex;
+width: 100%;
+height: 5rem;
+align-items: center;
+justify-content: space-between;
+border: .1rem solid black;
+padding-left: 5%;
+padding: 5%;
+@include desktop{
+    margin-top: 3%;
+    height: 2rem;
+    font-size: 2rem;
+}
+
+
 
 }
 .delete{
-    position: absolute;
-    left: 50%;
+
+position: absolute;
+right: 0%;
+background: white;
+border: none;
+border: .1rem solid black;
+padding: 5%;
+font-family: 'Quicksand', sans-serif;
+background: #F1F2F0;
+
+&:hover{
+    background: black;
+    color: white;
+}
     
  
     
@@ -67,7 +135,11 @@ margin-top: 5%;
     position: relative;
 }
 .header__to-do-list{
-    margin-top: 20%;
+    margin-top: 10%;
     height: 100%;
     width: 100%;
+    position: relative;
+}
+input[type="text"] {
+    font-size: 1.5rem;
 }
